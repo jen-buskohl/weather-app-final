@@ -8,6 +8,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   let days = [
     "Sunday",
     "Monday",
@@ -37,6 +38,7 @@ function displayTemperature(response) {
 }
 
 let apiKey = "o2972aff83bt1a433411747ae6c9e0f0";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query={Seattle}&key=${apiKey}&units=metric`;
+let city = "Seattle";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
